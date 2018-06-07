@@ -52,8 +52,8 @@
     <Reference Include="PassportPDF, Version=1.0.26.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\PassportPDF.1.0.26\lib\net461\PassportPDF.dll</HintPath>
     </Reference>
-    <Reference Include="PassportPDF.Tools.Framework, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\PassportPDF.Tools.Framework.1.0.19\lib\netstandard2.0\PassportPDF.Tools.Framework.dll</HintPath>
+    <Reference Include="PassportPDF.Tools.Framework, Version=1.0.20.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\PassportPDF.Tools.Framework.1.0.20\lib\netstandard2.0\PassportPDF.Tools.Framework.dll</HintPath>
     </Reference>
     <Reference Include="PassportPDF.Tools.WinForm, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\PassportPDF.Tools.WinForm.1.0.19\lib\net461\PassportPDF.Tools.WinForm.dll</HintPath>
@@ -115,8 +115,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\AssemblyUtilities.cs" />
-    <Compile Include="Controller\ImageToPDFMRCController.cs" />
-    <Compile Include="MrcCompressorGlobals.cs" />
+    <Compile Include="Controller\MRCCompressorController.cs" />
+    <Compile Include="MRCCompressorGlobals.cs" />
     <Compile Include="Views\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
