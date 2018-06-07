@@ -1,2 +1,6 @@
 
 clean.bat
+.vs
+bin
+obj
+packages
