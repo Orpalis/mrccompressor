@@ -1,0 +1,114 @@
+﻿[
+  {
+    "Name": "label_tabImages",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Images",
+      "en": "Images"
+    }
+  },
+  {
+    "Name": "label_tabOutputFormat",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Format de sortie",
+      "en": "Output Format"
+    }
+  },
+  {
+    "Name": "label_lbPdfVersion",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Version PDF:",
+      "en": "PDF Version:"
+    }
+  },
+  {
+    "Name": "label_chkDownscaleImages",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Redimensionner les images",
+      "en": "Downscale images"
+    }
+  },
+  {
+    "Name": "label_chkFastWebView",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Activer la linéarization (affichage web plus rapide contre taille de fichier)",
+      "en": "Enable fast web view"
+    }
+  },
+  {
+    "Name": "label_lbResolution",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Résolution finale:",
+      "en": "Downscale resolution:"
+    }
+  },
+  {
+    "Name": "label_lbDpi",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "dpi",
+      "en": "dpi"
+    }
+  },
+  {
+    "Name": "label_lbColorCompressionScheme",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Schéma de compression:",
+      "en": "Compression scheme:"
+    }
+  },
+  {
+    "Name": "label_lbBitonalCompressionScheme",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Schéma de compression:",
+      "en": "Compression scheme:"
+    }
+  },
+  {
+    "Name": "label_lbImageQuality",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Qualité:",
+      "en": "Quality:"
+    }
+  },
+  {
+    "Name": "label_chkCompressColorImages",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Compresser les images en couleur",
+      "en": "Compress color images"
+    }
+  },
+  {
+    "Name": "label_chkCompressBitonalImages",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Compresser les images en noir et blanc",
+      "en": "Compress black and white images"
+    }
+  },
+  {
+    "Name": "label_lbCompression",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Compression:",
+      "en": "Compression:"
+    }
+  },
+  {
+    "Name": "label_lbDownscaling",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Redimensionnement:",
+      "en": "Downscaling:"
+    }
+  }
+]
