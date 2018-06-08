@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabImages = new System.Windows.Forms.TabPage();
-            this.chkCompressBitonalImages = new System.Windows.Forms.CheckBox();
-            this.chkCompressColorImages = new System.Windows.Forms.CheckBox();
-            this.lbDownscaling = new System.Windows.Forms.Label();
-            this.lbCompression = new System.Windows.Forms.Label();
+            this.tabCompression = new System.Windows.Forms.TabPage();
             this.nuImageQuality = new System.Windows.Forms.NumericUpDown();
             this.lbImageQuality = new System.Windows.Forms.Label();
             this.lbColorCompressionScheme = new System.Windows.Forms.Label();
@@ -48,7 +44,7 @@
             this.lbPdfVersion = new System.Windows.Forms.Label();
             this.chkFastWebView = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
-            this.tabImages.SuspendLayout();
+            this.tabCompression.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuImageQuality)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuDownscaleResolution)).BeginInit();
             this.tabOutputFormat.SuspendLayout();
@@ -61,83 +57,36 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabImages);
+            this.tabControl1.Controls.Add(this.tabCompression);
             this.tabControl1.Controls.Add(this.tabOutputFormat);
             this.tabControl1.Controls.SetChildIndex(this.tabOutputFormat, 0);
-            this.tabControl1.Controls.SetChildIndex(this.tabImages, 0);
+            this.tabControl1.Controls.SetChildIndex(this.tabCompression, 0);
             this.tabControl1.Controls.SetChildIndex(this.tabGeneral, 0);
             // 
-            // tabImages
+            // tabCompression
             // 
-            this.tabImages.Controls.Add(this.chkCompressBitonalImages);
-            this.tabImages.Controls.Add(this.chkCompressColorImages);
-            this.tabImages.Controls.Add(this.lbDownscaling);
-            this.tabImages.Controls.Add(this.lbCompression);
-            this.tabImages.Controls.Add(this.nuImageQuality);
-            this.tabImages.Controls.Add(this.lbImageQuality);
-            this.tabImages.Controls.Add(this.lbColorCompressionScheme);
-            this.tabImages.Controls.Add(this.lbDpi);
-            this.tabImages.Controls.Add(this.chkDownscaleImages);
-            this.tabImages.Controls.Add(this.cmbBitonalCompressionScheme);
-            this.tabImages.Controls.Add(this.nuDownscaleResolution);
-            this.tabImages.Controls.Add(this.lbResolution);
-            this.tabImages.Controls.Add(this.lbBitonalCompressionScheme);
-            this.tabImages.Controls.Add(this.cmbColorCompressionScheme);
-            this.tabImages.Location = new System.Drawing.Point(4, 22);
-            this.tabImages.Margin = new System.Windows.Forms.Padding(1);
-            this.tabImages.Name = "tabImages";
-            this.tabImages.Padding = new System.Windows.Forms.Padding(1);
-            this.tabImages.Size = new System.Drawing.Size(485, 217);
-            this.tabImages.TabIndex = 3;
-            this.tabImages.Text = "Images";
-            this.tabImages.UseVisualStyleBackColor = true;
-            // 
-            // chkCompressBitonalImages
-            // 
-            this.chkCompressBitonalImages.AutoSize = true;
-            this.chkCompressBitonalImages.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.chkCompressBitonalImages.Location = new System.Drawing.Point(240, 62);
-            this.chkCompressBitonalImages.Name = "chkCompressBitonalImages";
-            this.chkCompressBitonalImages.Size = new System.Drawing.Size(186, 17);
-            this.chkCompressBitonalImages.TabIndex = 27;
-            this.chkCompressBitonalImages.Text = "Compress black and white images";
-            this.chkCompressBitonalImages.UseVisualStyleBackColor = true;
-            // 
-            // chkCompressColorImages
-            // 
-            this.chkCompressColorImages.AutoSize = true;
-            this.chkCompressColorImages.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.chkCompressColorImages.Location = new System.Drawing.Point(31, 62);
-            this.chkCompressColorImages.Name = "chkCompressColorImages";
-            this.chkCompressColorImages.Size = new System.Drawing.Size(134, 17);
-            this.chkCompressColorImages.TabIndex = 26;
-            this.chkCompressColorImages.Text = "Compress color images";
-            this.chkCompressColorImages.UseVisualStyleBackColor = true;
-            // 
-            // lbDownscaling
-            // 
-            this.lbDownscaling.AutoSize = true;
-            this.lbDownscaling.Location = new System.Drawing.Point(15, 142);
-            this.lbDownscaling.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lbDownscaling.Name = "lbDownscaling";
-            this.lbDownscaling.Size = new System.Drawing.Size(71, 13);
-            this.lbDownscaling.TabIndex = 25;
-            this.lbDownscaling.Text = "Downscaling:";
-            // 
-            // lbCompression
-            // 
-            this.lbCompression.AutoSize = true;
-            this.lbCompression.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lbCompression.Location = new System.Drawing.Point(15, 15);
-            this.lbCompression.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lbCompression.Name = "lbCompression";
-            this.lbCompression.Size = new System.Drawing.Size(70, 13);
-            this.lbCompression.TabIndex = 24;
-            this.lbCompression.Text = "Compression:";
+            this.tabCompression.Controls.Add(this.nuImageQuality);
+            this.tabCompression.Controls.Add(this.lbImageQuality);
+            this.tabCompression.Controls.Add(this.lbColorCompressionScheme);
+            this.tabCompression.Controls.Add(this.lbDpi);
+            this.tabCompression.Controls.Add(this.chkDownscaleImages);
+            this.tabCompression.Controls.Add(this.cmbBitonalCompressionScheme);
+            this.tabCompression.Controls.Add(this.nuDownscaleResolution);
+            this.tabCompression.Controls.Add(this.lbResolution);
+            this.tabCompression.Controls.Add(this.lbBitonalCompressionScheme);
+            this.tabCompression.Controls.Add(this.cmbColorCompressionScheme);
+            this.tabCompression.Location = new System.Drawing.Point(4, 22);
+            this.tabCompression.Margin = new System.Windows.Forms.Padding(1);
+            this.tabCompression.Name = "tabCompression";
+            this.tabCompression.Padding = new System.Windows.Forms.Padding(1);
+            this.tabCompression.Size = new System.Drawing.Size(485, 217);
+            this.tabCompression.TabIndex = 3;
+            this.tabCompression.Text = "Compression";
+            this.tabCompression.UseVisualStyleBackColor = true;
             // 
             // nuImageQuality
             // 
-            this.nuImageQuality.Location = new System.Drawing.Point(74, 36);
+            this.nuImageQuality.Location = new System.Drawing.Point(63, 13);
             this.nuImageQuality.Name = "nuImageQuality";
             this.nuImageQuality.Size = new System.Drawing.Size(50, 20);
             this.nuImageQuality.TabIndex = 23;
@@ -150,7 +99,7 @@
             // lbImageQuality
             // 
             this.lbImageQuality.AutoSize = true;
-            this.lbImageQuality.Location = new System.Drawing.Point(28, 38);
+            this.lbImageQuality.Location = new System.Drawing.Point(15, 15);
             this.lbImageQuality.Name = "lbImageQuality";
             this.lbImageQuality.Size = new System.Drawing.Size(42, 13);
             this.lbImageQuality.TabIndex = 22;
@@ -159,16 +108,16 @@
             // lbColorCompressionScheme
             // 
             this.lbColorCompressionScheme.AutoSize = true;
-            this.lbColorCompressionScheme.Location = new System.Drawing.Point(28, 86);
+            this.lbColorCompressionScheme.Location = new System.Drawing.Point(17, 41);
             this.lbColorCompressionScheme.Name = "lbColorCompressionScheme";
-            this.lbColorCompressionScheme.Size = new System.Drawing.Size(110, 13);
+            this.lbColorCompressionScheme.Size = new System.Drawing.Size(172, 13);
             this.lbColorCompressionScheme.TabIndex = 20;
-            this.lbColorCompressionScheme.Text = "Compression scheme:";
+            this.lbColorCompressionScheme.Text = "Color images compression scheme:";
             // 
             // lbDpi
             // 
             this.lbDpi.AutoSize = true;
-            this.lbDpi.Location = new System.Drawing.Point(201, 191);
+            this.lbDpi.Location = new System.Drawing.Point(191, 161);
             this.lbDpi.Name = "lbDpi";
             this.lbDpi.Size = new System.Drawing.Size(21, 13);
             this.lbDpi.TabIndex = 19;
@@ -178,7 +127,7 @@
             // 
             this.chkDownscaleImages.AutoSize = true;
             this.chkDownscaleImages.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.chkDownscaleImages.Location = new System.Drawing.Point(30, 167);
+            this.chkDownscaleImages.Location = new System.Drawing.Point(20, 136);
             this.chkDownscaleImages.Name = "chkDownscaleImages";
             this.chkDownscaleImages.Size = new System.Drawing.Size(115, 17);
             this.chkDownscaleImages.TabIndex = 18;
@@ -189,14 +138,14 @@
             // 
             this.cmbBitonalCompressionScheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBitonalCompressionScheme.FormattingEnabled = true;
-            this.cmbBitonalCompressionScheme.Location = new System.Drawing.Point(240, 108);
+            this.cmbBitonalCompressionScheme.Location = new System.Drawing.Point(20, 104);
             this.cmbBitonalCompressionScheme.Name = "cmbBitonalCompressionScheme";
-            this.cmbBitonalCompressionScheme.Size = new System.Drawing.Size(94, 21);
+            this.cmbBitonalCompressionScheme.Size = new System.Drawing.Size(123, 21);
             this.cmbBitonalCompressionScheme.TabIndex = 17;
             // 
             // nuDownscaleResolution
             // 
-            this.nuDownscaleResolution.Location = new System.Drawing.Point(145, 189);
+            this.nuDownscaleResolution.Location = new System.Drawing.Point(135, 159);
             this.nuDownscaleResolution.Maximum = new decimal(new int[] {
             1200,
             0,
@@ -219,7 +168,7 @@
             // lbResolution
             // 
             this.lbResolution.AutoSize = true;
-            this.lbResolution.Location = new System.Drawing.Point(28, 191);
+            this.lbResolution.Location = new System.Drawing.Point(18, 161);
             this.lbResolution.Name = "lbResolution";
             this.lbResolution.Size = new System.Drawing.Size(111, 13);
             this.lbResolution.TabIndex = 15;
@@ -228,19 +177,19 @@
             // lbBitonalCompressionScheme
             // 
             this.lbBitonalCompressionScheme.AutoSize = true;
-            this.lbBitonalCompressionScheme.Location = new System.Drawing.Point(237, 86);
+            this.lbBitonalCompressionScheme.Location = new System.Drawing.Point(17, 88);
             this.lbBitonalCompressionScheme.Name = "lbBitonalCompressionScheme";
-            this.lbBitonalCompressionScheme.Size = new System.Drawing.Size(110, 13);
+            this.lbBitonalCompressionScheme.Size = new System.Drawing.Size(224, 13);
             this.lbBitonalCompressionScheme.TabIndex = 14;
-            this.lbBitonalCompressionScheme.Text = "Compression scheme:";
+            this.lbBitonalCompressionScheme.Text = "Black and white images compression scheme:";
             // 
             // cmbColorCompressionScheme
             // 
             this.cmbColorCompressionScheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbColorCompressionScheme.FormattingEnabled = true;
-            this.cmbColorCompressionScheme.Location = new System.Drawing.Point(30, 108);
+            this.cmbColorCompressionScheme.Location = new System.Drawing.Point(19, 59);
             this.cmbColorCompressionScheme.Name = "cmbColorCompressionScheme";
-            this.cmbColorCompressionScheme.Size = new System.Drawing.Size(94, 21);
+            this.cmbColorCompressionScheme.Size = new System.Drawing.Size(124, 21);
             this.cmbColorCompressionScheme.TabIndex = 8;
             // 
             // tabOutputFormat
@@ -294,8 +243,8 @@
             this.Name = "frmOptions";
             this.Text = "PassportPDF MRC Compressor - Options";
             this.tabControl1.ResumeLayout(false);
-            this.tabImages.ResumeLayout(false);
-            this.tabImages.PerformLayout();
+            this.tabCompression.ResumeLayout(false);
+            this.tabCompression.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuImageQuality)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuDownscaleResolution)).EndInit();
             this.tabOutputFormat.ResumeLayout(false);
@@ -306,7 +255,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabPage tabImages;
+        private System.Windows.Forms.TabPage tabCompression;
         private System.Windows.Forms.Label lbColorCompressionScheme;
         private System.Windows.Forms.Label lbDpi;
         private System.Windows.Forms.CheckBox chkDownscaleImages;
@@ -321,9 +270,5 @@
         private System.Windows.Forms.ComboBox cmbPdfVersion;
         private System.Windows.Forms.Label lbPdfVersion;
         private System.Windows.Forms.CheckBox chkFastWebView;
-        private System.Windows.Forms.CheckBox chkCompressBitonalImages;
-        private System.Windows.Forms.CheckBox chkCompressColorImages;
-        private System.Windows.Forms.Label lbDownscaling;
-        private System.Windows.Forms.Label lbCompression;
     }
 }

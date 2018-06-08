@@ -1,10 +1,10 @@
 ﻿[
   {
-    "Name": "label_tabImages",
+    "Name": "label_tabCompression",
     "ResourceIDs": "*",
     "LocalizedValue": {
-      "fr": "Images",
-      "en": "Images"
+      "fr": "Compression",
+      "en": "Compression"
     }
   },
   {
@@ -59,16 +59,16 @@
     "Name": "label_lbColorCompressionScheme",
     "ResourceIDs": "*",
     "LocalizedValue": {
-      "fr": "Schéma de compression:",
-      "en": "Compression scheme:"
+      "fr": "Schéma de compression pour les images en couleur:",
+      "en": "Color images compression scheme:"
     }
   },
   {
     "Name": "label_lbBitonalCompressionScheme",
     "ResourceIDs": "*",
     "LocalizedValue": {
-      "fr": "Schéma de compression:",
-      "en": "Compression scheme:"
+      "fr": "Schéma de compression pour les images en noir et blanc:",
+      "en": "Black and white images compression scheme:"
     }
   },
   {
@@ -80,35 +80,11 @@
     }
   },
   {
-    "Name": "label_chkCompressColorImages",
+    "Name": "label_noCompression",
     "ResourceIDs": "*",
     "LocalizedValue": {
-      "fr": "Compresser les images en couleur",
-      "en": "Compress color images"
-    }
-  },
-  {
-    "Name": "label_chkCompressBitonalImages",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Compresser les images en noir et blanc",
-      "en": "Compress black and white images"
-    }
-  },
-  {
-    "Name": "label_lbCompression",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Compression:",
-      "en": "Compression:"
-    }
-  },
-  {
-    "Name": "label_lbDownscaling",
-    "ResourceIDs": "*",
-    "LocalizedValue": {
-      "fr": "Redimensionnement:",
-      "en": "Downscaling:"
+      "fr": "Pas de compression",
+      "en": "No compression"
     }
   }
 ]

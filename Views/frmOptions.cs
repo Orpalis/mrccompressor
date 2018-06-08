@@ -36,20 +36,16 @@ namespace MRCCompressor.Views
         {
             base.LoadLabels();
 
-            tabImages.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_tabImages", FrameworkGlobals.ApplicationLanguage);
+            tabCompression.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_tabCompression", FrameworkGlobals.ApplicationLanguage);
             tabOutputFormat.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_tabOutputFormat", FrameworkGlobals.ApplicationLanguage);
-            lbCompression.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_lbCompression", FrameworkGlobals.ApplicationLanguage);
             lbBitonalCompressionScheme.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_lbBitonalCompressionScheme", FrameworkGlobals.ApplicationLanguage);
             lbColorCompressionScheme.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_lbColorCompressionScheme", FrameworkGlobals.ApplicationLanguage);
             lbDpi.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_lbDpi", FrameworkGlobals.ApplicationLanguage);
             lbImageQuality.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_lbImageQuality", FrameworkGlobals.ApplicationLanguage);
             lbPdfVersion.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_lbPdfVersion", FrameworkGlobals.ApplicationLanguage);
-            lbDownscaling.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_lbDownscaling", FrameworkGlobals.ApplicationLanguage);
             chkDownscaleImages.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_chkDownscaleImages", FrameworkGlobals.ApplicationLanguage);
             lbResolution.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_lbResolution", FrameworkGlobals.ApplicationLanguage);
             chkFastWebView.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_chkFastWebView", FrameworkGlobals.ApplicationLanguage);
-            chkCompressColorImages.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_chkCompressColorImages", FrameworkGlobals.ApplicationLanguage);
-            chkCompressBitonalImages.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_chkCompressBitonalImages", FrameworkGlobals.ApplicationLanguage);
 
             PopulateComboBoxes();
         }
@@ -81,28 +77,40 @@ namespace MRCCompressor.Views
                 }
             }
 
-            string selectedBitonalCompressionScheme = (string)cmbBitonalCompressionScheme.Items[cmbBitonalCompressionScheme.SelectedIndex];
-
-            foreach (var entry in MRCCompressorGlobals.AvailableBitonalCompressionSchemes)
+            if (cmbBitonalCompressionScheme.SelectedIndex == 0)
             {
-                if (entry.Value == selectedBitonalCompressionScheme)
+                MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.BitonalImageCompression = ImageSaveAsPDFParameters.BitonalImageCompressionEnum.None;
+            }
+            else
+            {
+                string selectedBitonalCompressionScheme = (string)cmbBitonalCompressionScheme.Items[cmbBitonalCompressionScheme.SelectedIndex];
+
+                foreach (var entry in MRCCompressorGlobals.AvailableBitonalCompressionSchemes)
                 {
-                    MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.BitonalImageCompression = entry.Key;
+                    if (entry.Value == selectedBitonalCompressionScheme)
+                    {
+                        MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.BitonalImageCompression = entry.Key;
+                    }
                 }
             }
 
-            string selectedColorCompressionScheme = (string)cmbColorCompressionScheme.Items[cmbColorCompressionScheme.SelectedIndex];
-
-            foreach (var entry in MRCCompressorGlobals.AvailableColorCompressionSchemes)
+            if (cmbColorCompressionScheme.SelectedIndex == 0)
             {
-                if (entry.Value == selectedColorCompressionScheme)
+                MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.ColorImageCompression = ImageSaveAsPDFParameters.ColorImageCompressionEnum.None;
+            }
+            else
+            {
+                string selectedColorCompressionScheme = (string)cmbColorCompressionScheme.Items[cmbColorCompressionScheme.SelectedIndex];
+
+                foreach (var entry in MRCCompressorGlobals.AvailableColorCompressionSchemes)
                 {
-                    MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.ColorImageCompression = entry.Key;
+                    if (entry.Value == selectedColorCompressionScheme)
+                    {
+                        MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.ColorImageCompression = entry.Key;
+                    }
                 }
             }
 
-            MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.CompressBitonalImages = chkCompressBitonalImages.Checked;
-            MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.CompressColorImages = chkCompressColorImages.Checked;
             MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.FastWebView = chkFastWebView.Checked;
             MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.DownscaleResolution = chkDownscaleImages.Checked ? 0 : (int)nuDownscaleResolution.Value;
             MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.ImageQuality = (int)nuImageQuality.Value;
@@ -129,11 +137,13 @@ namespace MRCCompressor.Views
                 cmbPdfVersion.Items.Add(pdfVersion);
             }
 
+            cmbColorCompressionScheme.Items.Add(MRCCompressorGlobals.LabelsLocalizer.GetString("label_noCompression", FrameworkGlobals.ApplicationLanguage));
             foreach (var colorCompressionScheme in MRCCompressorGlobals.AvailableColorCompressionSchemes.Values)
             {
                 cmbColorCompressionScheme.Items.Add(colorCompressionScheme);
             }
 
+            cmbBitonalCompressionScheme.Items.Add(MRCCompressorGlobals.LabelsLocalizer.GetString("label_noCompression", FrameworkGlobals.ApplicationLanguage));
             foreach (var bitonalCompressionScheme in MRCCompressorGlobals.AvailableBitonalCompressionSchemes.Values)
             {
                 cmbBitonalCompressionScheme.Items.Add(bitonalCompressionScheme);
@@ -154,24 +164,38 @@ namespace MRCCompressor.Views
                 index++;
             }
 
-            index = 0;
-            foreach (var entry in MRCCompressorGlobals.AvailableBitonalCompressionSchemes)
+            if (MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.BitonalImageCompression == ImageSaveAsPDFParameters.BitonalImageCompressionEnum.None)
             {
-                if (entry.Key == MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.BitonalImageCompression)
+                cmbBitonalCompressionScheme.SelectedIndex = 0;
+            }
+            else
+            {
+                index = 1;
+                foreach (var entry in MRCCompressorGlobals.AvailableBitonalCompressionSchemes)
                 {
-                    cmbBitonalCompressionScheme.SelectedIndex = index;
+                    if (entry.Key == MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.BitonalImageCompression)
+                    {
+                        cmbBitonalCompressionScheme.SelectedIndex = index;
+                    }
+                    index++;
                 }
-                index++;
             }
 
-            index = 0;
-            foreach (var entry in MRCCompressorGlobals.AvailableColorCompressionSchemes)
+            if (MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.ColorImageCompression == ImageSaveAsPDFParameters.ColorImageCompressionEnum.None)
             {
-                if (entry.Key == MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.ColorImageCompression)
+                cmbColorCompressionScheme.SelectedIndex = 1;
+            }
+            else
+            {
+                index = 1;
+                foreach (var entry in MRCCompressorGlobals.AvailableColorCompressionSchemes)
                 {
-                    cmbColorCompressionScheme.SelectedIndex = index;
+                    if (entry.Key == MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.ColorImageCompression)
+                    {
+                        cmbColorCompressionScheme.SelectedIndex = index;
+                    }
+                    index++;
                 }
-                index++;
             }
         }
     }
