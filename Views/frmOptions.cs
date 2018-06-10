@@ -56,8 +56,8 @@ namespace MRCCompressor.Views
             base.LoadConfiguration();
 
             chkFastWebView.Checked = MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.FastWebView;
-            chkDownscaleImages.Checked = MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.DownscaleResolution == 0;
-            nuDownscaleResolution.Value = Math.Max(MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.DownscaleResolution, 1);
+            chkDownscaleImages.Checked = MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.DownscaleImages;
+            nuDownscaleResolution.Value = MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.DownscaleResolution;
             nuImageQuality.Value = MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.ImageQuality;
             SetSelectedItemsInComboBoxes();
         }
@@ -112,7 +112,8 @@ namespace MRCCompressor.Views
             }
 
             MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.FastWebView = chkFastWebView.Checked;
-            MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.DownscaleResolution = chkDownscaleImages.Checked ? 0 : (int)nuDownscaleResolution.Value;
+            MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.DownscaleImages = chkDownscaleImages.Checked;
+            MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.DownscaleResolution = (int)nuDownscaleResolution.Value;
             MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.ImageQuality = (int)nuImageQuality.Value;
 
             Dispose();

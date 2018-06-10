@@ -42,7 +42,7 @@ namespace MRCCompressor
             { ImageSaveAsPDFParameters.ConformanceEnum.PDF15, "PDF 1.5" },
             { ImageSaveAsPDFParameters.ConformanceEnum.PDF16, "PDF 1.6" },
             { ImageSaveAsPDFParameters.ConformanceEnum.PDF17, "PDF 1.7" },
-            { ImageSaveAsPDFParameters.ConformanceEnum.PDF20, "PDF 2.0 (ISO 32000-2)" },
+            { ImageSaveAsPDFParameters.ConformanceEnum.PDF20, "PDF 2.0" },
             { ImageSaveAsPDFParameters.ConformanceEnum.PDFA1a, "PDF/A-1A" },
             { ImageSaveAsPDFParameters.ConformanceEnum.PDFA1b, "PDF/A-1B" },
             { ImageSaveAsPDFParameters.ConformanceEnum.PDFA2a, "PDF/A-2A" },
@@ -58,8 +58,6 @@ namespace MRCCompressor
         {
             { ImageSaveAsPDFParameters.BitonalImageCompressionEnum.Flate, "Flate"},
             { ImageSaveAsPDFParameters.BitonalImageCompressionEnum.CCIT4, "CCIT4"},
-            { ImageSaveAsPDFParameters.BitonalImageCompressionEnum.JPEG, "JPEG"},
-            { ImageSaveAsPDFParameters.BitonalImageCompressionEnum.JPEG2000, "JPEG2000"},
             { ImageSaveAsPDFParameters.BitonalImageCompressionEnum.JBIG2, "JBIG2"}
         };
 
@@ -67,10 +65,8 @@ namespace MRCCompressor
         public static readonly Dictionary<ImageSaveAsPDFParameters.ColorImageCompressionEnum, string> AvailableColorCompressionSchemes = new Dictionary<ImageSaveAsPDFParameters.ColorImageCompressionEnum, string>()
         {
             { ImageSaveAsPDFParameters.ColorImageCompressionEnum.Flate, "Flate"},
-            { ImageSaveAsPDFParameters.ColorImageCompressionEnum.CCIT4, "CCIT4"},
             { ImageSaveAsPDFParameters.ColorImageCompressionEnum.JPEG, "JPEG"},
             { ImageSaveAsPDFParameters.ColorImageCompressionEnum.JPEG2000, "JPEG2000"},
-            { ImageSaveAsPDFParameters.ColorImageCompressionEnum.JBIG2, "JBIG2"}
         };
 
 

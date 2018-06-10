@@ -58,7 +58,6 @@ namespace MRCCompressor.Controller
                 }
                 catch (Exception)
                 {
-                    //todo: use readImageSaveAsPDFConfigurationFailure localized message.
                     MessageBox.Show(FrameworkGlobals.MessagesLocalizer.GetString("readImageSaveAsPDFConfigurationFailure", FrameworkGlobals.ApplicationConfiguration.Language), FrameworkGlobals.MessagesLocalizer.GetString("readConfigurationFailureTitle", FrameworkGlobals.ApplicationConfiguration.Language), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration = ConfigurationManager.ResetDefaultImageSaveAsPDFActionConfiguration();
                 }
@@ -89,7 +88,18 @@ namespace MRCCompressor.Controller
             using (frmOptions frmOptions = new frmOptions())
             {
                 frmOptions.LoadLabels();
-                frmOptions.LoadConfiguration();
+
+                try
+                {
+                    frmOptions.LoadConfiguration();
+                }
+                catch
+                {
+                    MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration = ConfigurationManager.ResetDefaultImageSaveAsPDFActionConfiguration();
+                    MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.AdvancedImageCompression = PassportPDF.Model.ImageSaveAsPDFParameters.AdvancedImageCompressionEnum.MRC;
+                    frmOptions.LoadConfiguration();
+                }
+
                 frmOptions.ShowDialog(_view.WindowInstance);
             }
         }
@@ -99,37 +109,44 @@ namespace MRCCompressor.Controller
         {
             base.OnFileOperationsCompletion(fileOperationsResult);
 
-            string operationsCompletionMessage = LogMessagesUtils.TimeStampLogMessage(LogMessagesUtils.GetGenericFileOperationsCompletionText(fileOperationsResult));
+            UpdateCompressionStats(fileOperationsResult.InputFileSize, fileOperationsResult.OutputFileSize);
+
+            string operationsCompletionMessage = LogMessagesUtils.GetGenericFileOperationsCompletionText(fileOperationsResult);
+            if (FrameworkGlobals.ApplicationConfiguration.TimestampLogs)
+            {
+                operationsCompletionMessage = LogMessagesUtils.TimeStampLogMessage(operationsCompletionMessage);
+            }
+
             _view.NotifyOperationCompletion(operationsCompletionMessage);
 
             if (!string.IsNullOrEmpty(FrameworkGlobals.ApplicationConfiguration.LogsPath))
             {
                 FrameworkGlobals.LogsManager.LogMessage(operationsCompletionMessage);
             }
+
+            ((IMrcCompressorMainView)_view).NotifyReductionRatioChange(100 - _operationsStats.ReductionRatio);
         }
 
 
-        protected override void OnWorkerWorkCompletion(int workerNumber)
+        protected override void OnOperationsCompletion()
         {
-            base.OnWorkerWorkCompletion(workerNumber);
+            base.OnOperationsCompletion();
 
-            if (_view.WorkerItemCount == 0)
+            string elapsedTime = ParsingUtils.GetElapsedTimeString(_stopwatch.Elapsed);
+
+            _view.NotifyOperationsResult(LogMessagesUtils.GetImagePdfMrcCompressionWorkResultMessage(_operationsStats.ProcessedFileCount, _operationsStats.SuccesfullyProcessedFileCount, _operationsStats.UnsuccesfullyProcessedFileCount, _operationsStats.TotalInputSize, _operationsStats.TotalOutputSize, elapsedTime));
+
+            string detailedWorkCompletionMessage = LogMessagesUtils.GetImagePdfMrcCompressionWorkResultMessageDetailed(_operationsStats.ProcessedFileCount, _operationsStats.SuccesfullyProcessedFileCount, _operationsStats.UnsuccesfullyProcessedFileCount, _operationsStats.TotalInputSize, _operationsStats.TotalOutputSize, elapsedTime);
+
+            if (!_appInfo.AutoRun)
             {
-                string workCompletionMessage = LogMessagesUtils.GetGenericWorkCompletionMessage(_operationsStats.ProcessedFileCount, _operationsStats.SuccesfullyProcessedFileCount,
-                    _operationsStats.UnsuccesfullyProcessedFileCount, ParsingUtils.GetElapsedTimeString(_stopwatch.Elapsed.Hours, _stopwatch.Elapsed.Minutes, _stopwatch.Elapsed.Seconds, _stopwatch.Elapsed.Milliseconds / 10));
-
-                _view.NotifyOperationsResult(workCompletionMessage);
-
-                if (!_appInfo.AutoRun)
-                {
-                    DialogUtilities.ShowInformationMessage(workCompletionMessage, FrameworkGlobals.MessagesLocalizer.GetString("processTerminated", FrameworkGlobals.ApplicationConfiguration.Language));
-                    _view.UnlockView();
-                }
-                else
-                {
-                    Console.Write(workCompletionMessage);
-                    _view.ExitApplication();
-                }
+                DialogUtilities.ShowInformationMessage(detailedWorkCompletionMessage, FrameworkGlobals.MessagesLocalizer.GetString("processTerminated", FrameworkGlobals.ApplicationLanguage));
+                _view.UnlockView();
+            }
+            else
+            {
+                Console.Write(detailedWorkCompletionMessage);
+                _view.ExitApplication();
             }
         }
 
@@ -144,6 +161,14 @@ namespace MRCCompressor.Controller
             {
                 MessageBox.Show(FrameworkGlobals.MessagesLocalizer.GetString("saveConfigurationFailure", FrameworkGlobals.ApplicationConfiguration.Language), FrameworkGlobals.MessagesLocalizer.GetString("saveConfigurationFailureTitle", FrameworkGlobals.ApplicationConfiguration.Language), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+
+        private void UpdateCompressionStats(float inputSize, float outputSize)
+        {
+            _operationsStats.TotalInputSize += inputSize;
+            _operationsStats.TotalOutputSize += outputSize;
+            _operationsStats.ReductionRatio = StatsComputationUtilities.ComputeReductionRatio(_operationsStats.TotalInputSize, _operationsStats.TotalOutputSize);
         }
     }
 }

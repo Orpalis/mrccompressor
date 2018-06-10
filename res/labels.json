@@ -1,5 +1,13 @@
 ﻿[
   {
+    "Name": "label_lbCompressionRatio",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Place gagnée:",
+      "en": "Saved space:"
+    }
+  },
+  {
     "Name": "label_tabCompression",
     "ResourceIDs": "*",
     "LocalizedValue": {

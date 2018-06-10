@@ -16,15 +16,69 @@
  *
  **********************************************************************/
 
+using System;
+using PassportPDF.Tools.Framework;
 using PassportPDF.Tools.WinForm.Views;
 
 namespace MRCCompressor.Views
 {
-    public partial class frmMain : frmMainBase
+    public partial class frmMain : frmMainBase, IMrcCompressorMainView
     {
+        private delegate void UpdateRatioDelegate(double ratio);
+
+        private readonly UpdateRatioDelegate _compressionRatioUpdateEventHandler;
+
+
         public frmMain()
         {
+            _compressionRatioUpdateEventHandler = UpdateReductionRatio;
             InitializeComponent();
+            lbCompressionRatio.Visible = false;
+            lbCompressionRatioValue.Visible = false;
+        }
+
+
+        protected override void LoadLabels()
+        {
+            base.LoadLabels();
+            lbCompressionRatio.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_lbCompressionRatio", FrameworkGlobals.ApplicationLanguage);
+        }
+
+
+        protected override void LockView()
+        {
+            base.LockView();
+            lbCompressionRatioValue.Text = "0%";
+            lbCompressionRatio.Visible = true;
+            lbCompressionRatioValue.Visible = true;
+
+        }
+
+
+        protected override void UnlockView()
+        {
+            base.UnlockView();
+            lbCompressionRatio.Visible = false;
+            lbCompressionRatioValue.Visible = false;
+        }
+
+
+        private void UpdateReductionRatio(double updatedRatio)
+        {
+            lbCompressionRatioValue.Text = Math.Round(updatedRatio, 2) + "%";
+        }
+
+
+        void IMrcCompressorMainView.NotifyReductionRatioChange(double ratio)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(_compressionRatioUpdateEventHandler, ratio);
+            }
+            else
+            {
+                UpdateReductionRatio(ratio);
+            }
         }
     }
 }
