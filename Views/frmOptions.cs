@@ -184,7 +184,7 @@ namespace MRCCompressor.Views
 
             if (MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.ColorImageCompression == ImageSaveAsPDFParameters.ColorImageCompressionEnum.None)
             {
-                cmbColorCompressionScheme.SelectedIndex = 1;
+                cmbColorCompressionScheme.SelectedIndex = 0;
             }
             else
             {
