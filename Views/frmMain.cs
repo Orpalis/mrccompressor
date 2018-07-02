@@ -65,7 +65,14 @@ namespace MRCCompressor.Views
 
         private void UpdateReductionRatio(double updatedRatio)
         {
-            lbCompressionRatioValue.Text = Math.Round(updatedRatio, 2) + "%";
+            if (updatedRatio < 0)
+            {
+                lbCompressionRatioValue.Text = "< 0%";
+            }
+            else
+            {
+                lbCompressionRatioValue.Text = Math.Round(updatedRatio, 2) + "%";
+            }
         }
 
 

@@ -140,7 +140,7 @@ namespace MRCCompressor.Controller
 
             if (!_appInfo.AutoRun)
             {
-                DialogUtilities.ShowInformationMessage(detailedWorkCompletionMessage, FrameworkGlobals.MessagesLocalizer.GetString("processTerminated", FrameworkGlobals.ApplicationLanguage));
+                _view.ShowInformationMessage(detailedWorkCompletionMessage, FrameworkGlobals.MessagesLocalizer.GetString("processTerminated", FrameworkGlobals.ApplicationLanguage));
                 _view.UnlockView();
             }
             else
