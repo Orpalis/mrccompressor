@@ -36,8 +36,7 @@ namespace MRCCompressor.Controller
     {
         public MRCCompressorController(bool autoRun, string[] args) : base(
             new PassportPDFDesktopAppInformation(
-                MRCCompressorGlobals.PRODUCT_NAME, MRCCompressorGlobals.PASSPORT_PDF_APP_ID,
-                MRCCompressorGlobals.APP_EXECUTABLE_NAME, MRCCompressorGlobals.SOURCE_CODE_URL,
+                MRCCompressorGlobals.PRODUCT_NAME, MRCCompressorGlobals.PASSPORT_PDF_APP_ID, MRCCompressorGlobals.SOURCE_CODE_URL,
                 AssemblyUtilities.GetVersion(), Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location),
                 Properties.Resources.mrc_compressor_final_logo, MRCCompressorGlobals.INPUT_FILE_TYPE,
                 MRCCompressorGlobals.GetApplicationConfigurationFilePath(), autoRun, args))
