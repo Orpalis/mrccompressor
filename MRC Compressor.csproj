@@ -52,8 +52,8 @@
     <Reference Include="FubarCoder.RestSharp.Portable.HttpClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=be81bb0f53eab22f, processorArchitecture=MSIL">
       <HintPath>packages\FubarCoder.RestSharp.Portable.HttpClient.4.0.8\lib\net45\FubarCoder.RestSharp.Portable.HttpClient.dll</HintPath>
     </Reference>
-    <Reference Include="JsonSubTypes, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\JsonSubTypes.1.4.0\lib\net46\JsonSubTypes.dll</HintPath>
+    <Reference Include="JsonSubTypes, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\JsonSubTypes.1.5.0\lib\net46\JsonSubTypes.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Win32.Registry, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Win32.Registry.4.5.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
@@ -64,8 +64,8 @@
     <Reference Include="Orpalis.Globals.Localization, Version=1.0.0.2, Culture=neutral, PublicKeyToken=47f7b74dc969121f, processorArchitecture=MSIL">
       <HintPath>packages\Orpalis.Globals.Localization.1.0.2\lib\netstandard2.0\Orpalis.Globals.Localization.dll</HintPath>
     </Reference>
-    <Reference Include="PassportPDF, Version=1.0.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\PassportPDF.1.0.33\lib\netstandard1.3\PassportPDF.dll</HintPath>
+    <Reference Include="PassportPDF, Version=1.0.34.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\PassportPDF.1.0.34\lib\netstandard1.3\PassportPDF.dll</HintPath>
     </Reference>
     <Reference Include="PassportPDF.Tools.Framework, Version=1.0.31.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\PassportPDF.Tools.Framework.1.0.31\lib\netstandard2.0\PassportPDF.Tools.Framework.dll</HintPath>
