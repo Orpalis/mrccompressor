@@ -53,18 +53,18 @@ namespace MRCCompressor.Controller
             {
                 try
                 {
-                    MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration = (ImageSaveAsPDFActionConfiguration)ConfigurationManager.InitializeConfigurationInstanceEx(MRCCompressorGlobals.GetSaveAsPDFActionConfigurationFilePath(), typeof(ImageSaveAsPDFActionConfiguration));
+                    MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration = (ImageSaveAsPDFMRCActionConfiguration)ConfigurationManager.InitializeConfigurationInstanceEx(MRCCompressorGlobals.GetSaveAsPDFMRCActionConfigurationFilePath(), typeof(ImageSaveAsPDFMRCActionConfiguration));
                 }
                 catch (Exception)
                 {
                     MessageBox.Show(FrameworkGlobals.MessagesLocalizer.GetString("readImageSaveAsPDFConfigurationFailure", FrameworkGlobals.ApplicationConfiguration.Language), FrameworkGlobals.MessagesLocalizer.GetString("readConfigurationFailureTitle", FrameworkGlobals.ApplicationConfiguration.Language), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration = ConfigurationManager.ResetDefaultImageSaveAsPDFActionConfiguration();
+                    MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration = ConfigurationManager.ResetDefaultImageSaveAsPDFMRCActionConfiguration();
                 }
             }
             else
             {
-                MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration = ConfigurationManager.ResetDefaultImageSaveAsPDFActionConfiguration();
-                CommandLineParsingUtilities.ParseCommandLineArgs(_appInfo.CommandLineArguments, FrameworkGlobals.ApplicationConfiguration, imageSaveAsPdfActionConfiguration: MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration);
+                MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration = ConfigurationManager.ResetDefaultImageSaveAsPDFMRCActionConfiguration();
+                CommandLineParsingUtilities.ParseCommandLineArgs(_appInfo.CommandLineArguments, FrameworkGlobals.ApplicationConfiguration, imageSaveAsPdfMrcActionConfiguration: MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration);
 
                 if (FrameworkGlobals.ApplicationConfiguration.MinimizedWindow)
                 {
@@ -78,7 +78,7 @@ namespace MRCCompressor.Controller
 
         protected override OperationsWorkflow GetOperationWorkflow()
         {
-            return OperationsWorkflowUtilities.CreateImageToPDFMRCWorkflow(MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration);
+            return OperationsWorkflowUtilities.CreateImageToPDFMRCWorkflow(MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration);
         }
 
 
@@ -94,8 +94,7 @@ namespace MRCCompressor.Controller
                 }
                 catch
                 {
-                    MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration = ConfigurationManager.ResetDefaultImageSaveAsPDFActionConfiguration();
-                    MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration.AdvancedImageCompression = PassportPDF.Model.ImageSaveAsPDFParameters.AdvancedImageCompressionEnum.MRC;
+                    MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration = ConfigurationManager.ResetDefaultImageSaveAsPDFMRCActionConfiguration();
                     frmOptions.LoadConfiguration();
                 }
 
@@ -156,7 +155,7 @@ namespace MRCCompressor.Controller
 
             if (!_appInfo.AutoRun &&
                 (!ConfigurationManager.SaveConfiguration(MRCCompressorGlobals.GetApplicationConfigurationFilePath(), FrameworkGlobals.ApplicationConfiguration) ||
-                !ConfigurationManager.SaveConfiguration(MRCCompressorGlobals.GetSaveAsPDFActionConfigurationFilePath(), MRCCompressorGlobals.ImageSaveAsPDFActionConfiguration)))
+                !ConfigurationManager.SaveConfiguration(MRCCompressorGlobals.GetSaveAsPDFMRCActionConfigurationFilePath(), MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration)))
             {
                 MessageBox.Show(FrameworkGlobals.MessagesLocalizer.GetString("saveConfigurationFailure", FrameworkGlobals.ApplicationConfiguration.Language), FrameworkGlobals.MessagesLocalizer.GetString("saveConfigurationFailureTitle", FrameworkGlobals.ApplicationConfiguration.Language), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

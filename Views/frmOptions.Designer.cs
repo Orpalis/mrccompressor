@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tabCompression = new System.Windows.Forms.TabPage();
+            this.chkPreserveSmoothing = new System.Windows.Forms.CheckBox();
             this.nuImageQuality = new System.Windows.Forms.NumericUpDown();
             this.lbImageQuality = new System.Windows.Forms.Label();
             this.lbColorCompressionScheme = new System.Windows.Forms.Label();
@@ -65,6 +66,7 @@
             // 
             // tabCompression
             // 
+            this.tabCompression.Controls.Add(this.chkPreserveSmoothing);
             this.tabCompression.Controls.Add(this.nuImageQuality);
             this.tabCompression.Controls.Add(this.lbImageQuality);
             this.tabCompression.Controls.Add(this.lbColorCompressionScheme);
@@ -84,9 +86,19 @@
             this.tabCompression.Text = "Compression";
             this.tabCompression.UseVisualStyleBackColor = true;
             // 
+            // chkPreserveSmoothing
+            // 
+            this.chkPreserveSmoothing.AutoSize = true;
+            this.chkPreserveSmoothing.Location = new System.Drawing.Point(21, 182);
+            this.chkPreserveSmoothing.Name = "chkPreserveSmoothing";
+            this.chkPreserveSmoothing.Size = new System.Drawing.Size(119, 17);
+            this.chkPreserveSmoothing.TabIndex = 24;
+            this.chkPreserveSmoothing.Text = "Preserve smoothing";
+            this.chkPreserveSmoothing.UseVisualStyleBackColor = true;
+            // 
             // nuImageQuality
             // 
-            this.nuImageQuality.Location = new System.Drawing.Point(63, 13);
+            this.nuImageQuality.Location = new System.Drawing.Point(64, 13);
             this.nuImageQuality.Name = "nuImageQuality";
             this.nuImageQuality.Size = new System.Drawing.Size(50, 20);
             this.nuImageQuality.TabIndex = 23;
@@ -99,7 +111,7 @@
             // lbImageQuality
             // 
             this.lbImageQuality.AutoSize = true;
-            this.lbImageQuality.Location = new System.Drawing.Point(15, 15);
+            this.lbImageQuality.Location = new System.Drawing.Point(16, 15);
             this.lbImageQuality.Name = "lbImageQuality";
             this.lbImageQuality.Size = new System.Drawing.Size(42, 13);
             this.lbImageQuality.TabIndex = 22;
@@ -117,7 +129,7 @@
             // lbDpi
             // 
             this.lbDpi.AutoSize = true;
-            this.lbDpi.Location = new System.Drawing.Point(191, 161);
+            this.lbDpi.Location = new System.Drawing.Point(191, 158);
             this.lbDpi.Name = "lbDpi";
             this.lbDpi.Size = new System.Drawing.Size(21, 13);
             this.lbDpi.TabIndex = 19;
@@ -133,6 +145,7 @@
             this.chkDownscaleImages.TabIndex = 18;
             this.chkDownscaleImages.Text = "Downscale images";
             this.chkDownscaleImages.UseVisualStyleBackColor = true;
+            this.chkDownscaleImages.CheckedChanged += new System.EventHandler(this.chkDownscaleImages_CheckedChanged);
             // 
             // cmbBitonalCompressionScheme
             // 
@@ -145,7 +158,7 @@
             // 
             // nuDownscaleResolution
             // 
-            this.nuDownscaleResolution.Location = new System.Drawing.Point(135, 159);
+            this.nuDownscaleResolution.Location = new System.Drawing.Point(135, 156);
             this.nuDownscaleResolution.Maximum = new decimal(new int[] {
             1200,
             0,
@@ -168,7 +181,7 @@
             // lbResolution
             // 
             this.lbResolution.AutoSize = true;
-            this.lbResolution.Location = new System.Drawing.Point(18, 161);
+            this.lbResolution.Location = new System.Drawing.Point(18, 158);
             this.lbResolution.Name = "lbResolution";
             this.lbResolution.Size = new System.Drawing.Size(111, 13);
             this.lbResolution.TabIndex = 15;
@@ -270,5 +283,6 @@
         private System.Windows.Forms.ComboBox cmbPdfVersion;
         private System.Windows.Forms.Label lbPdfVersion;
         private System.Windows.Forms.CheckBox chkFastWebView;
+        private System.Windows.Forms.CheckBox chkPreserveSmoothing;
     }
 }

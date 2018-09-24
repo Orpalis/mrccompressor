@@ -36,45 +36,41 @@ namespace MRCCompressor
 
         public static readonly OrpalisLocalizer LabelsLocalizer = new OrpalisLocalizer(AssemblyUtilities.GetManifestResourceStream("res.labels.json"));
 
-        public static readonly Dictionary<ImageSaveAsPDFParameters.ConformanceEnum, string> AvailableOutputPdfVersions = new Dictionary<ImageSaveAsPDFParameters.ConformanceEnum, string>()
+        public static readonly Dictionary<ImageSaveAsPDFMRCParameters.ConformanceEnum, string> AvailableOutputPdfVersions = new Dictionary<ImageSaveAsPDFMRCParameters.ConformanceEnum, string>()
         {
-            { ImageSaveAsPDFParameters.ConformanceEnum.PDF14, "PDF 1.4" },
-            { ImageSaveAsPDFParameters.ConformanceEnum.PDF15, "PDF 1.5" },
-            { ImageSaveAsPDFParameters.ConformanceEnum.PDF16, "PDF 1.6" },
-            { ImageSaveAsPDFParameters.ConformanceEnum.PDF17, "PDF 1.7" },
-            { ImageSaveAsPDFParameters.ConformanceEnum.PDF20, "PDF 2.0" },
-            { ImageSaveAsPDFParameters.ConformanceEnum.PDFA1a, "PDF/A-1A" },
-            { ImageSaveAsPDFParameters.ConformanceEnum.PDFA1b, "PDF/A-1B" },
-            { ImageSaveAsPDFParameters.ConformanceEnum.PDFA2a, "PDF/A-2A" },
-            { ImageSaveAsPDFParameters.ConformanceEnum.PDFA2u, "PDF/A-2U" },
-            { ImageSaveAsPDFParameters.ConformanceEnum.PDFA2b, "PDF/A-2B" },
-            { ImageSaveAsPDFParameters.ConformanceEnum.PDFA3a, "PDF/A-3A" },
-            { ImageSaveAsPDFParameters.ConformanceEnum.PDFA3u, "PDF/A-3U" },
-            { ImageSaveAsPDFParameters.ConformanceEnum.PDFA3b, "PDF/A-3B" }
+            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDF14, "PDF 1.4" },
+            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDF15, "PDF 1.5" },
+            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDF16, "PDF 1.6" },
+            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDF17, "PDF 1.7" },
+            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDF20, "PDF 2.0" },
+            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA1a, "PDF/A-1A" },
+            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA1b, "PDF/A-1B" },
+            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA2a, "PDF/A-2A" },
+            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA2u, "PDF/A-2U" },
+            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA2b, "PDF/A-2B" },
+            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA3a, "PDF/A-3A" },
+            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA3u, "PDF/A-3U" },
+            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA3b, "PDF/A-3B" }
         };
 
 
-        public static readonly Dictionary<ImageSaveAsPDFParameters.BitonalImageCompressionEnum, string> AvailableBitonalCompressionSchemes = new Dictionary<ImageSaveAsPDFParameters.BitonalImageCompressionEnum, string>()
+        public static readonly Dictionary<ImageSaveAsPDFMRCParameters.BitonalImageCompressionEnum, string> AvailableBitonalCompressionSchemes = new Dictionary<ImageSaveAsPDFMRCParameters.BitonalImageCompressionEnum, string>()
         {
-            { ImageSaveAsPDFParameters.BitonalImageCompressionEnum.Flate, "Flate"},
-            { ImageSaveAsPDFParameters.BitonalImageCompressionEnum.CCIT4, "CCIT4"},
-            { ImageSaveAsPDFParameters.BitonalImageCompressionEnum.JBIG2, "JBIG2"}
+            { ImageSaveAsPDFMRCParameters.BitonalImageCompressionEnum.Flate, "Flate"},
+            { ImageSaveAsPDFMRCParameters.BitonalImageCompressionEnum.CCIT4, "CCIT4"},
+            { ImageSaveAsPDFMRCParameters.BitonalImageCompressionEnum.JBIG2, "JBIG2"}
         };
 
 
-        public static readonly Dictionary<ImageSaveAsPDFParameters.ColorImageCompressionEnum, string> AvailableColorCompressionSchemes = new Dictionary<ImageSaveAsPDFParameters.ColorImageCompressionEnum, string>()
+        public static readonly Dictionary<ImageSaveAsPDFMRCParameters.ColorImageCompressionEnum, string> AvailableColorCompressionSchemes = new Dictionary<ImageSaveAsPDFMRCParameters.ColorImageCompressionEnum, string>()
         {
-            { ImageSaveAsPDFParameters.ColorImageCompressionEnum.Flate, "Flate"},
-            { ImageSaveAsPDFParameters.ColorImageCompressionEnum.JPEG, "JPEG"},
-            { ImageSaveAsPDFParameters.ColorImageCompressionEnum.JPEG2000, "JPEG2000"},
+            { ImageSaveAsPDFMRCParameters.ColorImageCompressionEnum.Flate, "Flate"},
+            { ImageSaveAsPDFMRCParameters.ColorImageCompressionEnum.JPEG, "JPEG"},
+            { ImageSaveAsPDFMRCParameters.ColorImageCompressionEnum.JPEG2000, "JPEG2000"},
         };
 
 
-        public static ImageSaveAsPDFActionConfiguration ImageSaveAsPDFActionConfiguration = new ImageSaveAsPDFActionConfiguration()
-        {
-            AdvancedImageCompression = ImageSaveAsPDFParameters.AdvancedImageCompressionEnum.MRC
-        };
-
+        public static ImageSaveAsPDFMRCActionConfiguration ImageSaveAsPDFMRCActionConfiguration = new ImageSaveAsPDFMRCActionConfiguration();
 
         public static string GetApplicationConfigurationFilePath()
         {
@@ -82,9 +78,9 @@ namespace MRCCompressor
         }
 
 
-        public static string GetSaveAsPDFActionConfigurationFilePath()
+        public static string GetSaveAsPDFMRCActionConfigurationFilePath()
         {
-            return Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" + PASSPORT_PDF_APP_ID + "\\saveAsPDFActionConfiguration.data";
+            return Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" + PASSPORT_PDF_APP_ID + "\\saveAsPDFMRCActionConfiguration.data";
         }
     }
 }
