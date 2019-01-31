@@ -62,7 +62,8 @@ namespace MRCCompressor.Views
             nuImageQuality.Value = MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.ImageQuality;
             chkPreserveSmoothing.Checked = MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.PreserveSmoothing;
             nuDownscaleResolution.Enabled = MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.DownscaleImages;
-
+            lbResolution.Enabled = MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.DownscaleImages;
+            lbDpi.Enabled = MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.DownscaleImages;
             SetSelectedItemsInComboBoxes();
         }
 
@@ -208,6 +209,8 @@ namespace MRCCompressor.Views
         private void chkDownscaleImages_CheckedChanged(object sender, EventArgs e)
         {
             nuDownscaleResolution.Enabled = chkDownscaleImages.Checked;
+            lbResolution.Enabled = chkDownscaleImages.Checked;
+            lbDpi.Enabled = chkDownscaleImages.Checked;
         }
     }
 }

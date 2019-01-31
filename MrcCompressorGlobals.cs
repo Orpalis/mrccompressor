@@ -38,13 +38,10 @@ namespace MRCCompressor
 
         public static readonly Dictionary<ImageSaveAsPDFMRCParameters.ConformanceEnum, string> AvailableOutputPdfVersions = new Dictionary<ImageSaveAsPDFMRCParameters.ConformanceEnum, string>()
         {
-            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDF14, "PDF 1.4" },
             { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDF15, "PDF 1.5" },
             { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDF16, "PDF 1.6" },
             { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDF17, "PDF 1.7" },
             { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDF20, "PDF 2.0" },
-            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA1a, "PDF/A-1A" },
-            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA1b, "PDF/A-1B" },
             { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA2a, "PDF/A-2A" },
             { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA2u, "PDF/A-2U" },
             { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA2b, "PDF/A-2B" },

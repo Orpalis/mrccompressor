@@ -1,6 +1,6 @@
 ﻿namespace MRCCompressor.Views
 {
-    partial class frmOptions
+    partial class frmOptions : PassportPDF.Tools.WinForm.Views.frmOptionsBase
     {
         /// <summary>
         /// Required designer variable.
@@ -44,17 +44,14 @@
             this.cmbPdfVersion = new System.Windows.Forms.ComboBox();
             this.lbPdfVersion = new System.Windows.Forms.Label();
             this.chkFastWebView = new System.Windows.Forms.CheckBox();
+            this.panelCompression = new System.Windows.Forms.Panel();
+            this.panelOutputFormat = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabCompression.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuImageQuality)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuDownscaleResolution)).BeginInit();
             this.tabOutputFormat.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tabGeneral
-            // 
-            this.tabGeneral.Margin = new System.Windows.Forms.Padding(1);
-            this.tabGeneral.Padding = new System.Windows.Forms.Padding(1);
             // 
             // tabControl1
             // 
@@ -77,10 +74,10 @@
             this.tabCompression.Controls.Add(this.lbResolution);
             this.tabCompression.Controls.Add(this.lbBitonalCompressionScheme);
             this.tabCompression.Controls.Add(this.cmbColorCompressionScheme);
+            this.tabCompression.Controls.Add(this.panelCompression);
             this.tabCompression.Location = new System.Drawing.Point(4, 22);
-            this.tabCompression.Margin = new System.Windows.Forms.Padding(1);
             this.tabCompression.Name = "tabCompression";
-            this.tabCompression.Padding = new System.Windows.Forms.Padding(1);
+            this.tabCompression.Padding = new System.Windows.Forms.Padding(3);
             this.tabCompression.Size = new System.Drawing.Size(485, 217);
             this.tabCompression.TabIndex = 3;
             this.tabCompression.Text = "Compression";
@@ -89,7 +86,7 @@
             // chkPreserveSmoothing
             // 
             this.chkPreserveSmoothing.AutoSize = true;
-            this.chkPreserveSmoothing.Location = new System.Drawing.Point(21, 182);
+            this.chkPreserveSmoothing.Location = new System.Drawing.Point(18, 184);
             this.chkPreserveSmoothing.Name = "chkPreserveSmoothing";
             this.chkPreserveSmoothing.Size = new System.Drawing.Size(119, 17);
             this.chkPreserveSmoothing.TabIndex = 24;
@@ -98,7 +95,7 @@
             // 
             // nuImageQuality
             // 
-            this.nuImageQuality.Location = new System.Drawing.Point(64, 13);
+            this.nuImageQuality.Location = new System.Drawing.Point(63, 13);
             this.nuImageQuality.Name = "nuImageQuality";
             this.nuImageQuality.Size = new System.Drawing.Size(50, 20);
             this.nuImageQuality.TabIndex = 23;
@@ -111,7 +108,7 @@
             // lbImageQuality
             // 
             this.lbImageQuality.AutoSize = true;
-            this.lbImageQuality.Location = new System.Drawing.Point(16, 15);
+            this.lbImageQuality.Location = new System.Drawing.Point(15, 15);
             this.lbImageQuality.Name = "lbImageQuality";
             this.lbImageQuality.Size = new System.Drawing.Size(42, 13);
             this.lbImageQuality.TabIndex = 22;
@@ -120,7 +117,7 @@
             // lbColorCompressionScheme
             // 
             this.lbColorCompressionScheme.AutoSize = true;
-            this.lbColorCompressionScheme.Location = new System.Drawing.Point(17, 41);
+            this.lbColorCompressionScheme.Location = new System.Drawing.Point(15, 43);
             this.lbColorCompressionScheme.Name = "lbColorCompressionScheme";
             this.lbColorCompressionScheme.Size = new System.Drawing.Size(172, 13);
             this.lbColorCompressionScheme.TabIndex = 20;
@@ -129,7 +126,7 @@
             // lbDpi
             // 
             this.lbDpi.AutoSize = true;
-            this.lbDpi.Location = new System.Drawing.Point(191, 158);
+            this.lbDpi.Location = new System.Drawing.Point(193, 160);
             this.lbDpi.Name = "lbDpi";
             this.lbDpi.Size = new System.Drawing.Size(21, 13);
             this.lbDpi.TabIndex = 19;
@@ -139,7 +136,7 @@
             // 
             this.chkDownscaleImages.AutoSize = true;
             this.chkDownscaleImages.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.chkDownscaleImages.Location = new System.Drawing.Point(20, 136);
+            this.chkDownscaleImages.Location = new System.Drawing.Point(18, 138);
             this.chkDownscaleImages.Name = "chkDownscaleImages";
             this.chkDownscaleImages.Size = new System.Drawing.Size(115, 17);
             this.chkDownscaleImages.TabIndex = 18;
@@ -151,7 +148,7 @@
             // 
             this.cmbBitonalCompressionScheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBitonalCompressionScheme.FormattingEnabled = true;
-            this.cmbBitonalCompressionScheme.Location = new System.Drawing.Point(20, 104);
+            this.cmbBitonalCompressionScheme.Location = new System.Drawing.Point(18, 106);
             this.cmbBitonalCompressionScheme.Name = "cmbBitonalCompressionScheme";
             this.cmbBitonalCompressionScheme.Size = new System.Drawing.Size(123, 21);
             this.cmbBitonalCompressionScheme.TabIndex = 17;
@@ -181,7 +178,7 @@
             // lbResolution
             // 
             this.lbResolution.AutoSize = true;
-            this.lbResolution.Location = new System.Drawing.Point(18, 158);
+            this.lbResolution.Location = new System.Drawing.Point(15, 160);
             this.lbResolution.Name = "lbResolution";
             this.lbResolution.Size = new System.Drawing.Size(111, 13);
             this.lbResolution.TabIndex = 15;
@@ -190,7 +187,7 @@
             // lbBitonalCompressionScheme
             // 
             this.lbBitonalCompressionScheme.AutoSize = true;
-            this.lbBitonalCompressionScheme.Location = new System.Drawing.Point(17, 88);
+            this.lbBitonalCompressionScheme.Location = new System.Drawing.Point(15, 88);
             this.lbBitonalCompressionScheme.Name = "lbBitonalCompressionScheme";
             this.lbBitonalCompressionScheme.Size = new System.Drawing.Size(224, 13);
             this.lbBitonalCompressionScheme.TabIndex = 14;
@@ -200,7 +197,7 @@
             // 
             this.cmbColorCompressionScheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbColorCompressionScheme.FormattingEnabled = true;
-            this.cmbColorCompressionScheme.Location = new System.Drawing.Point(19, 59);
+            this.cmbColorCompressionScheme.Location = new System.Drawing.Point(18, 61);
             this.cmbColorCompressionScheme.Name = "cmbColorCompressionScheme";
             this.cmbColorCompressionScheme.Size = new System.Drawing.Size(124, 21);
             this.cmbColorCompressionScheme.TabIndex = 8;
@@ -210,10 +207,10 @@
             this.tabOutputFormat.Controls.Add(this.cmbPdfVersion);
             this.tabOutputFormat.Controls.Add(this.lbPdfVersion);
             this.tabOutputFormat.Controls.Add(this.chkFastWebView);
+            this.tabOutputFormat.Controls.Add(this.panelOutputFormat);
             this.tabOutputFormat.Location = new System.Drawing.Point(4, 22);
-            this.tabOutputFormat.Margin = new System.Windows.Forms.Padding(1);
             this.tabOutputFormat.Name = "tabOutputFormat";
-            this.tabOutputFormat.Padding = new System.Windows.Forms.Padding(1);
+            this.tabOutputFormat.Padding = new System.Windows.Forms.Padding(3);
             this.tabOutputFormat.Size = new System.Drawing.Size(485, 217);
             this.tabOutputFormat.TabIndex = 4;
             this.tabOutputFormat.Text = "Output Format";
@@ -223,7 +220,7 @@
             // 
             this.cmbPdfVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPdfVersion.FormattingEnabled = true;
-            this.cmbPdfVersion.Location = new System.Drawing.Point(89, 13);
+            this.cmbPdfVersion.Location = new System.Drawing.Point(87, 11);
             this.cmbPdfVersion.Name = "cmbPdfVersion";
             this.cmbPdfVersion.Size = new System.Drawing.Size(130, 21);
             this.cmbPdfVersion.TabIndex = 27;
@@ -246,6 +243,26 @@
             this.chkFastWebView.TabIndex = 26;
             this.chkFastWebView.Text = "Enable fast web view";
             this.chkFastWebView.UseVisualStyleBackColor = true;
+            // 
+            // panelCompression
+            // 
+            this.panelCompression.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCompression.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCompression.Location = new System.Drawing.Point(3, 3);
+            this.panelCompression.Name = "panelCompression";
+            this.panelCompression.Padding = new System.Windows.Forms.Padding(3);
+            this.panelCompression.Size = new System.Drawing.Size(479, 211);
+            this.panelCompression.TabIndex = 25;
+            // 
+            // panelOutputFormat
+            // 
+            this.panelOutputFormat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelOutputFormat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelOutputFormat.Location = new System.Drawing.Point(3, 3);
+            this.panelOutputFormat.Name = "panelOutputFormat";
+            this.panelOutputFormat.Padding = new System.Windows.Forms.Padding(3);
+            this.panelOutputFormat.Size = new System.Drawing.Size(479, 211);
+            this.panelOutputFormat.TabIndex = 29;
             // 
             // frmOptions
             // 
@@ -284,5 +301,7 @@
         private System.Windows.Forms.Label lbPdfVersion;
         private System.Windows.Forms.CheckBox chkFastWebView;
         private System.Windows.Forms.CheckBox chkPreserveSmoothing;
+        private System.Windows.Forms.Panel panelCompression;
+        private System.Windows.Forms.Panel panelOutputFormat;
     }
 }
