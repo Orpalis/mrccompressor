@@ -47,7 +47,7 @@ namespace MRCCompressor.Views
             lbResolution.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_lbResolution", FrameworkGlobals.ApplicationLanguage);
             chkFastWebView.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_chkFastWebView", FrameworkGlobals.ApplicationLanguage);
             chkPreserveSmoothing.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_chkPreserveSmoothing", FrameworkGlobals.ApplicationLanguage);
-
+            lbPms.Text = MRCCompressorGlobals.LabelsLocalizer.GetString("label_lbPms", FrameworkGlobals.ApplicationLanguage);
             PopulateComboBoxes();
         }
 
@@ -64,6 +64,7 @@ namespace MRCCompressor.Views
             nuDownscaleResolution.Enabled = MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.DownscaleImages;
             lbResolution.Enabled = MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.DownscaleImages;
             lbDpi.Enabled = MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.DownscaleImages;
+            nuPms.Value = (decimal)MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.JBIG2PMSTreshold;
             SetSelectedItemsInComboBoxes();
         }
 
@@ -84,7 +85,7 @@ namespace MRCCompressor.Views
 
             if (cmbBitonalCompressionScheme.SelectedIndex == 0)
             {
-                MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.BitonalImageCompression = ImageSaveAsPDFMRCParameters.BitonalImageCompressionEnum.None;
+                MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.BitonalImageCompression = PdfImageCompressionScheme.None;
             }
             else
             {
@@ -101,7 +102,7 @@ namespace MRCCompressor.Views
 
             if (cmbColorCompressionScheme.SelectedIndex == 0)
             {
-                MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.ColorImageCompression = ImageSaveAsPDFMRCParameters.ColorImageCompressionEnum.None;
+                MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.ColorImageCompression = PdfImageCompressionScheme.None;
             }
             else
             {
@@ -121,6 +122,7 @@ namespace MRCCompressor.Views
             MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.DownscaleResolution = (int)nuDownscaleResolution.Value;
             MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.ImageQuality = (int)nuImageQuality.Value;
             MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.PreserveSmoothing = chkPreserveSmoothing.Checked;
+            MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.JBIG2PMSTreshold = (float)nuPms.Value;
 
             Dispose();
         }
@@ -170,7 +172,7 @@ namespace MRCCompressor.Views
                 index++;
             }
 
-            if (MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.BitonalImageCompression == ImageSaveAsPDFMRCParameters.BitonalImageCompressionEnum.None)
+            if (MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.BitonalImageCompression == PdfImageCompressionScheme.None)
             {
                 cmbBitonalCompressionScheme.SelectedIndex = 0;
             }
@@ -187,7 +189,7 @@ namespace MRCCompressor.Views
                 }
             }
 
-            if (MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.ColorImageCompression == ImageSaveAsPDFMRCParameters.ColorImageCompressionEnum.None)
+            if (MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.ColorImageCompression == PdfImageCompressionScheme.None)
             {
                 cmbColorCompressionScheme.SelectedIndex = 0;
             }

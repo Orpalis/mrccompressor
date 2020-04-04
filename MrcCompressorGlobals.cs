@@ -36,34 +36,36 @@ namespace MRCCompressor
 
         public static readonly OrpalisLocalizer LabelsLocalizer = new OrpalisLocalizer(AssemblyUtilities.GetManifestResourceStream("res.labels.json"));
 
-        public static readonly Dictionary<ImageSaveAsPDFMRCParameters.ConformanceEnum, string> AvailableOutputPdfVersions = new Dictionary<ImageSaveAsPDFMRCParameters.ConformanceEnum, string>()
+        public static readonly Dictionary<PdfConformance, string> AvailableOutputPdfVersions = new Dictionary<PdfConformance, string>()
         {
-            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDF15, "PDF 1.5" },
-            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDF16, "PDF 1.6" },
-            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDF17, "PDF 1.7" },
-            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDF20, "PDF 2.0" },
-            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA2a, "PDF/A-2A" },
-            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA2u, "PDF/A-2U" },
-            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA2b, "PDF/A-2B" },
-            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA3a, "PDF/A-3A" },
-            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA3u, "PDF/A-3U" },
-            { ImageSaveAsPDFMRCParameters.ConformanceEnum.PDFA3b, "PDF/A-3B" }
+            { PdfConformance.PDF14, "PDF 1.4" },
+            { PdfConformance.PDF15, "PDF 1.5" },
+            { PdfConformance.PDF16, "PDF 1.6" },
+            { PdfConformance.PDF17, "PDF 1.7" },
+            { PdfConformance.PDF20, "PDF 2.0" },
+            { PdfConformance.PDFA1a, "PDF/A-1A" },
+            { PdfConformance.PDFA2a, "PDF/A-2A" },
+            { PdfConformance.PDFA2u, "PDF/A-2U" },
+            { PdfConformance.PDFA2b, "PDF/A-2B" },
+            { PdfConformance.PDFA3a, "PDF/A-3A" },
+            { PdfConformance.PDFA3u, "PDF/A-3U" },
+            { PdfConformance.PDFA3b, "PDF/A-3B" }
         };
 
 
-        public static readonly Dictionary<ImageSaveAsPDFMRCParameters.BitonalImageCompressionEnum, string> AvailableBitonalCompressionSchemes = new Dictionary<ImageSaveAsPDFMRCParameters.BitonalImageCompressionEnum, string>()
+        public static readonly Dictionary<PdfImageCompressionScheme, string> AvailableBitonalCompressionSchemes = new Dictionary<PdfImageCompressionScheme, string>()
         {
-            { ImageSaveAsPDFMRCParameters.BitonalImageCompressionEnum.Flate, "Flate"},
-            { ImageSaveAsPDFMRCParameters.BitonalImageCompressionEnum.CCIT4, "CCIT4"},
-            { ImageSaveAsPDFMRCParameters.BitonalImageCompressionEnum.JBIG2, "JBIG2"}
+            { PdfImageCompressionScheme.Flate, "Flate"},
+            { PdfImageCompressionScheme.CCIT4, "CCIT4"},
+            { PdfImageCompressionScheme.JBIG2, "JBIG2"}
         };
 
 
-        public static readonly Dictionary<ImageSaveAsPDFMRCParameters.ColorImageCompressionEnum, string> AvailableColorCompressionSchemes = new Dictionary<ImageSaveAsPDFMRCParameters.ColorImageCompressionEnum, string>()
+        public static readonly Dictionary<PdfImageCompressionScheme, string> AvailableColorCompressionSchemes = new Dictionary<PdfImageCompressionScheme, string>()
         {
-            { ImageSaveAsPDFMRCParameters.ColorImageCompressionEnum.Flate, "Flate"},
-            { ImageSaveAsPDFMRCParameters.ColorImageCompressionEnum.JPEG, "JPEG"},
-            { ImageSaveAsPDFMRCParameters.ColorImageCompressionEnum.JPEG2000, "JPEG2000"},
+            { PdfImageCompressionScheme.Flate, "Flate"},
+            { PdfImageCompressionScheme.JPEG, "JPEG"},
+            { PdfImageCompressionScheme.JPEG2000, "JPEG2000"},
         };
 
 

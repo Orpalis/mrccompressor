@@ -117,7 +117,7 @@ namespace MRCCompressor.Controller
 
             _view.NotifyOperationCompletion(operationsCompletionMessage);
 
-            if (!string.IsNullOrEmpty(FrameworkGlobals.ApplicationConfiguration.LogsPath))
+            if (FrameworkGlobals.ApplicationConfiguration.ExportLogs && !string.IsNullOrEmpty(FrameworkGlobals.ApplicationConfiguration.LogsPath))
             {
                 FrameworkGlobals.LogsManager.LogMessage(operationsCompletionMessage);
             }
@@ -132,9 +132,9 @@ namespace MRCCompressor.Controller
 
             string elapsedTime = ParsingUtils.GetElapsedTimeString(_stopwatch.Elapsed);
 
-            _view.NotifyOperationsResult(LogMessagesUtils.GetImagePdfMrcCompressionWorkResultMessage(_operationsStats.ProcessedFileCount, _operationsStats.SuccesfullyProcessedFileCount, _operationsStats.UnsuccesfullyProcessedFileCount, _operationsStats.TotalInputSize, _operationsStats.TotalOutputSize, elapsedTime));
+            _view.NotifyOperationsResult(LogMessagesUtils.GetImagePdfMrcCompressionWorkResultMessage(_operationsStats.ProcessedFileCount, _operationsStats.SuccesfullyProcessedFileCount, _operationsStats.UnsuccessfullyProcessedFileCount, _operationsStats.TotalInputSize, _operationsStats.TotalOutputSize, elapsedTime));
 
-            string detailedWorkCompletionMessage = LogMessagesUtils.GetImagePdfMrcCompressionWorkResultMessageDetailed(_operationsStats.ProcessedFileCount, _operationsStats.SuccesfullyProcessedFileCount, _operationsStats.UnsuccesfullyProcessedFileCount, _operationsStats.TotalInputSize, _operationsStats.TotalOutputSize, elapsedTime);
+            string detailedWorkCompletionMessage = LogMessagesUtils.GetImagePdfMrcCompressionWorkResultMessageDetailed(_operationsStats.ProcessedFileCount, _operationsStats.SuccesfullyProcessedFileCount, _operationsStats.UnsuccessfullyProcessedFileCount, _operationsStats.TotalInputSize, _operationsStats.TotalOutputSize, elapsedTime);
 
             if (!_appInfo.AutoRun)
             {

@@ -67,7 +67,7 @@
     "Name": "label_lbColorCompressionScheme",
     "ResourceIDs": "*",
     "LocalizedValue": {
-      "fr": "Schéma de compression pour les images en couleur:",
+      "fr": "Schéma de compression des images en couleur:",
       "en": "Color images compression scheme:"
     }
   },
@@ -75,7 +75,7 @@
     "Name": "label_lbBitonalCompressionScheme",
     "ResourceIDs": "*",
     "LocalizedValue": {
-      "fr": "Schéma de compression pour les images en noir et blanc:",
+      "fr": "Schéma de compression des images en noir et blanc:",
       "en": "Black and white images compression scheme:"
     }
   },
@@ -101,6 +101,14 @@
     "LocalizedValue": {
       "fr": "Préserver l'adoucissement des contours",
       "en": "Preserve smoothing"
+    }
+  },
+  {
+    "Name": "label_lbPms",
+    "ResourceIDs": "*",
+    "LocalizedValue": {
+      "fr": "Seuil d'appariement de formes et substitution du JBIG2:",
+      "en": "JBIG2 pattern matching and substitution treshold:"
     }
   }
 ]
