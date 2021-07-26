@@ -2,11 +2,19 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>MRCCompressor</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>res/mrc_compressor_icon.ico</ApplicationIcon>
-    <Version>1.0.0.13</Version>
+    <Version>1.0.0.16</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,9 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="PassportPDF" Version="1.0.68" />
-    <PackageReference Include="PassportPDF.Tools.Framework" Version="1.0.60" />
-    <PackageReference Include="PassportPDF.Tools.WinForm" Version="1.0.53" />
+    <PackageReference Include="PassportPDF" Version="1.0.77" />
+    <PackageReference Include="PassportPDF.Tools.Framework" Version="1.0.65" />
+    <PackageReference Include="PassportPDF.Tools.WinForm" Version="1.0.57" />
   </ItemGroup>
 
 </Project>
