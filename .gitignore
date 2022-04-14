@@ -4,3 +4,4 @@ clean.bat
 bin
 obj
 packages
+*.user

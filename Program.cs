@@ -26,11 +26,16 @@ using PassportPDF.Tools.WinForm.Controllers;
 using PassportPDF.Tools.WinForm.Views;
 using MRCCompressor.Views;
 using MRCCompressor.Controller;
+using System.Net;
 
 namespace MRCCompressor
 {
     static class Program
     {
+        static Program()
+        {
+            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
+        }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
