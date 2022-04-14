@@ -201,9 +201,9 @@
             this.lbPms.AutoSize = true;
             this.lbPms.Location = new System.Drawing.Point(11, 136);
             this.lbPms.Name = "lbPms";
-            this.lbPms.Size = new System.Drawing.Size(268, 15);
+            this.lbPms.Size = new System.Drawing.Size(275, 15);
             this.lbPms.TabIndex = 1;
-            this.lbPms.Text = "JBIG2 pattern matching and substitution treshold:";
+            this.lbPms.Text = "JBIG2 pattern matching and substitution threshold:";
             // 
             // lbResolution
             // 

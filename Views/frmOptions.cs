@@ -64,7 +64,7 @@ namespace MRCCompressor.Views
             nuDownscaleResolution.Enabled = MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.DownscaleImages;
             lbResolution.Enabled = MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.DownscaleImages;
             lbDpi.Enabled = MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.DownscaleImages;
-            nuPms.Value = (decimal)MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.JBIG2PMSTreshold;
+            nuPms.Value = (decimal)MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.JBIG2PMSThreshold;
             chkAutoRotate.Checked = MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.AutoRotate;
 
             SetSelectedItemsInComboBoxes();
@@ -124,7 +124,7 @@ namespace MRCCompressor.Views
             MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.DownscaleResolution = (int)nuDownscaleResolution.Value;
             MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.ImageQuality = (int)nuImageQuality.Value;
             MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.PreserveSmoothing = chkPreserveSmoothing.Checked;
-            MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.JBIG2PMSTreshold = (float)nuPms.Value;
+            MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.JBIG2PMSThreshold = (float)nuPms.Value;
             MRCCompressorGlobals.ImageSaveAsPDFMRCActionConfiguration.AutoRotate = chkAutoRotate.Checked;
 
             Dispose();

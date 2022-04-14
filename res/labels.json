@@ -108,7 +108,7 @@
     "ResourceIDs": "*",
     "LocalizedValue": {
       "fr": "Seuil d'appariement de formes et substitution du JBIG2:",
-      "en": "JBIG2 pattern matching and substitution treshold:"
+      "en": "JBIG2 pattern matching and substitution threshold:"
     }
   }
 ]
