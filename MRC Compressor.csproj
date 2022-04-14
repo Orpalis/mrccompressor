@@ -26,7 +26,7 @@
   <ItemGroup>
     <PackageReference Include="PassportPDF" Version="1.0.89" />
     <PackageReference Include="PassportPDF.Tools.Framework" Version="1.0.70" />
-    <PackageReference Include="PassportPDF.Tools.WinForm" Version="1.0.60" />
+    <PackageReference Include="PassportPDF.Tools.WinForm" Version="1.0.61" />
   </ItemGroup>
 
 </Project>
